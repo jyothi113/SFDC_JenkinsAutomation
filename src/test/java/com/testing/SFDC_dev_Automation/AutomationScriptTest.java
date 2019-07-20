@@ -105,7 +105,7 @@ public class AutomationScriptTest extends ReusableScript {
 				ClickButton(ContinueButton,"Continue");
 				System.out.println("Password Reset message is dispalyed and email is sent");
 		}
-		@Test(priority=4)
+		@Test(priority=5)
 		public static void TC_04B_ForgotPassword(){
 			CreateTestScriptReport("04B_ForgotPassword");
 			
