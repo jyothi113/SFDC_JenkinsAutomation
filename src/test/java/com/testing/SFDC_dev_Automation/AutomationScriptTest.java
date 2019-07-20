@@ -81,10 +81,9 @@ public class AutomationScriptTest extends ReusableScript {
 			
 			
 			WebElement logOutButton = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
-			ClickButton(logOutButton,"Logout");
-			
-			
+			ClickButton(logOutButton,"Logout");	
 		}
+		
 		@Test(priority=4)
 		public static void TC_04A_ForgotPassword() throws InterruptedException{
 			CreateTestScriptReport("04A_ForgotPassword");
