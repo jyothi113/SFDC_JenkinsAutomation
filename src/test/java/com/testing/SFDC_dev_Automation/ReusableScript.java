@@ -219,6 +219,19 @@ public class ReusableScript {
 		}
 		
 		
+
+		public static void ClickImage(WebElement Image,String objName){
+			if(Image.isEnabled()){
+				
+				Image.click();
+				System.out.println("Pass: "+ objName+ "is clicked");
+				logger.log(LogStatus.PASS, objName + "is clicked");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
 		public static void MouseOver(WebElement obj,String objName){
 			if(obj.isEnabled()){
 				

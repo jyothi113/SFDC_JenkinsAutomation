@@ -219,7 +219,7 @@ public class AutomationScript_2Test extends ReusableScript {
 			
 			WebElement EmailAddress = driver.findElement(By.xpath("//input[@id='sender_email']"));
 			ClearText(EmailAddress,"EmailAddress");	
-			enterText(EmailAddress, "jyothi.t113-uv7d@force.com","EmailAddress" );
+			enterText(EmailAddress, "jyothi.t113@force.com","EmailAddress" );
 			
 			WebElement AutomaticBCCradiobutton = driver.findElement(By.xpath("//input[@id='auto_bcc1']"));
 			ClickButton(AutomaticBCCradiobutton,"AutomaticBCCradiobutton");
@@ -358,6 +358,700 @@ public class AutomationScript_2Test extends ReusableScript {
 			ClickButton(SaveTab,"SaveTab");
 	
 		}
+		
+		@Test(priority=13)
+		public static void TC_12_EditView() throws InterruptedException{
+			CreateTestScriptReport("TC_12_EditView");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			WebElement Accounts = driver.findElement(By.xpath("//li[@id='Account_Tab']//a[contains(text(),'Accounts')]"));
+			ClickButton(Accounts,"Accounts");
+			
+			WebElement View =driver.findElement(By.xpath("//select[@id='fcf']"));
+			SelectFromList(View,"joe","View");
+			
+			Thread.sleep(2000);
+			WebElement viewEdit =driver.findElement(By.xpath("//a[contains(text(),'Edit')]"));
+			ClickLink(viewEdit,"viewEdit");
+			
+			WebElement NewViewName =driver.findElement(By.xpath("//input[@id='fname']"));
+			enterText(NewViewName, "Joee","NewViewName" );
+			
+			
+			WebElement fieldFilter =driver.findElement(By.xpath("//select[@id='fcol1']"));
+			SelectFromList(fieldFilter,"Account Name","fieldFilter");
+			
+			
+			Thread.sleep(2000);
+			
+			WebElement OperatorFilter =driver.findElement(By.xpath("//select[@id='fop1']"));
+			SelectFromList(fieldFilter,"contains","fieldFilter");
+		
+			WebElement ValueFilter =driver.findElement(By.xpath("//input[@id='fval1']"));
+			enterText(ValueFilter, "a","ValueFilter" );
+			
+			Thread.sleep(3000);
+			
+			WebElement LastActivity =driver.findElement(By.xpath("//select[@id='colselector_select_0']//option[contains(text(),'Last Activity')]"));
+			ClickButton(LastActivity,"LastActivity");
+			
+			Thread.sleep(2000);
+			
+			WebElement AddButton =driver.findElement(By.xpath("//img[@class='rightArrowIcon']"));
+			ClickButton(AddButton,"AddButton");
+			
+			//WebElement SaveButton =driver.findElement(By.xpath(""));
+			//SaveButton.click();
+			
+		
+		}
+		
+		@Test(priority=14)
+		public static void TC_13_MergeAccounts() throws InterruptedException{
+			CreateTestScriptReport("TC_13_MergeAccounts");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			WebElement Accounts = driver.findElement(By.xpath("//li[@id='Account_Tab']//a[contains(text(),'Accounts')]"));
+			ClickButton(Accounts,"Accounts");
+			
+			Thread.sleep(2000);
+			WebElement MergeAccountsLink = driver.findElement(By.xpath("//a[contains(text(),'Merge Accounts')]"));
+			ClickLink(MergeAccountsLink,"MergeAccountsLink");
+			
+			WebElement MergeAccountsTextbox = driver.findElement(By.xpath("//input[@id='srch']"));
+			enterText(MergeAccountsTextbox, "Jyo","MergeAccountsTextbox" );
+			
+			WebElement FindAccountsButton = driver.findElement(By.xpath("//input[@name='srchbutton']"));
+			ClickButton(FindAccountsButton,"FindAccountsButton");
+			WebElement decheck3 = driver.findElement(By.xpath("//input[@id='cid2']"));
+			deSelectCheckBox(decheck3,"decheck3");
+			
+			WebElement Next = driver.findElement(By.xpath("//div[@class='pbBottomButtons']//input[@name='goNext']"));
+			ClickButton(Next,"Next");
+			
+			WebElement Merge = driver.findElement(By.xpath("//div[@class='pbBottomButtons']//input[@name='save']"));
+			ClickButton(Merge,"Merge");
+			driver.switchTo().alert().accept();
+		}
+			
+		
+		@Test(priority=15)
+		public static void TC_14_AccountReport() throws InterruptedException{
+			CreateTestScriptReport("TC_14_AccountReport");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			WebElement Accounts = driver.findElement(By.xpath("//li[@id='Account_Tab']//a[contains(text(),'Accounts')]"));
+			ClickButton(Accounts,"Accounts");
+			
+			WebElement AccountswithLastActivityLink = driver.findElement(By.xpath("//a[contains(text(),'Accounts with last activity > 30 days')]"));
+			ClickButton(AccountswithLastActivityLink,"AccountswithLastActivityLink");
+		
+			WebElement DAtefielddropdown = driver.findElement(By.xpath("//img[@id='ext-gen148']"));
+			ClickButton(DAtefielddropdown,"DAtefielddropdown");
+			
+			WebElement createDAtedropdown = driver.findElement(By.xpath("//div[contains(text(),'Created Date')]"));
+			ClickButton(createDAtedropdown,"createDAtedropdown");
+			
+			WebElement createDAteFrom = driver.findElement(By.xpath("//img[@id='ext-gen152']"));
+			ClickImage(createDAteFrom,"createDAteFrom");
+			
+			
+			WebElement createDAteFromToday = driver.findElement(By.xpath("//button[text()='Today']"));
+			ClickButton(createDAteFromToday,"createDAteFromToday");
+			
+			WebElement createDAteTo = driver.findElement(By.xpath("//img[@id='ext-gen154']"));
+			ClickImage(createDAteTo,"createDAteTo");
+			
+			WebElement createDAteToToday = driver.findElement(By.xpath("(//button[text()='Today'])[2]"));
+			ClickButton(createDAteToToday,"createDAteToToday");
+			
+			
+			WebElement saveButton = driver.findElement(By.xpath("//button[@id='ext-gen49']"));
+			ClickButton(saveButton,"saveButton");
+			Thread.sleep(3000);
+			
+			WebElement PopupReportName = driver.findElement(By.xpath("//input[@id='saveReportDlg_reportNameField']"));
+			enterText(PopupReportName, "Pravin","PopupReportName" );
+			
+			
+			WebElement PopupReportUniqueName = driver.findElement(By.xpath("//input[@id='saveReportDlg_DeveloperName']"));
+			ClearText(PopupReportUniqueName,"PopupReportUniqueName");
+			enterText(PopupReportUniqueName, "1234","PopupReportUniqueName" );
+			
+			Thread.sleep(5000);
+			WebElement PopupsaveandRunReportButton = driver.findElement(By.xpath("//table[@id='dlgSaveAndRun']//td[@class='x-btn-mc']"));
+			ClickButton(PopupsaveandRunReportButton,"PopupsaveandRunReportButton");
+			
+		}
+		
+
+		@Test(priority=16)
+		public static void TC_15_Opportunities() throws InterruptedException{
+			CreateTestScriptReport("TC_15_Opportunities");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement oppurtunities = driver.findElement(By.xpath("//a[contains(text(),'Opportunities')]"));
+			ClickButton(oppurtunities,"oppurtunities");
+			
+			Thread.sleep(2000);
+			WebElement oppurtunitiesdropdown = driver.findElement(By.xpath("//select[@id='fcf']"));
+			ClickButton(oppurtunitiesdropdown,"oppurtunitiesdropdown");
+			
+			Thread.sleep(2000);
+			quit();
+		}
+		
+		@Test(priority=17)
+		public static void TC_16_Opportunities() throws InterruptedException{
+			CreateTestScriptReport("TC_16_Opportunities");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement oppurtunities = driver.findElement(By.xpath("//a[contains(text(),'Opportunities')]"));
+			ClickButton(oppurtunities,"oppurtunities");
+
+			
+			WebElement oppurtunitiesNewButton = driver.findElement(By.xpath("//input[@name='new']"));
+			ClickButton(oppurtunitiesNewButton,"oppurtunitiesNewButton");
+			
+			WebElement oppurtunitiesName = driver.findElement(By.xpath("//input[@id='opp3']"));
+			enterText(oppurtunitiesName, "sampleOpp","oppurtunitiesName" );
+			
+			WebElement AccountName = driver.findElement(By.xpath("//input[@id='opp4']"));
+			enterText(AccountName, "Jyo","AccountName" );
+			
+			WebElement closeDate = driver.findElement(By.xpath("//input[@id='opp9']"));
+			ClickButton(closeDate,"closeDate");
+			
+			WebElement closeDateToday = driver.findElement(By.xpath("//a[@class='calToday']"));
+			ClickLink(closeDateToday,"closeDateToday");
+			
+			
+			WebElement stage = driver.findElement(By.xpath("//select[@id='opp11']"));
+			SelectFromList(stage,"Proposal/Price Quote","stage");
+			
+			WebElement LeadSource = driver.findElement(By.xpath("//select[@id='opp6']"));
+			SelectFromList(LeadSource,"Web","LeadSource");
+			
+			//WebElement PrimaryCampaignsource = driver.findElement(By.xpath("//input[@id='opp17']"));
+			//PrimaryCampaignsource.sendKeys("Website");
+			
+			WebElement saveButton = driver.findElement(By.xpath("//td[@id='bottomButtonRow']//input[@name='save']"));
+			ClickButton(saveButton,"saveButton");
+			
+		}
+		
+		@Test(priority=18)
+		public static void TC_17_Opportunity_pipeline() throws InterruptedException{
+			CreateTestScriptReport("TC_17_Opportunity_pipeline");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement oppurtunities = driver.findElement(By.xpath("//a[contains(text(),'Opportunities')]"));
+			ClickButton(oppurtunities,"oppurtunities");
+
+
+			WebElement oppurtunitiesPipelinelink = driver.findElement(By.xpath("//a[contains(text(),'Opportunity Pipeline')]"));
+			ClickButton(oppurtunitiesPipelinelink,"oppurtunitiesPipelinelink");
+			
+			Thread.sleep(2000);
+			
+			quit();
+			}
+		
+		@Test(priority=19)
+		public static void TC_18_Opportunity_StuckLink() throws InterruptedException{
+			CreateTestScriptReport("TC_18_Opportunity_StuckLink");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement oppurtunities = driver.findElement(By.xpath("//a[contains(text(),'Opportunities')]"));
+			ClickButton(oppurtunities,"oppurtunities");
+
+			WebElement Stuckoppurtunities = driver.findElement(By.xpath("//a[contains(text(),'Stuck Opportunities')]"));
+			ClickButton(Stuckoppurtunities,"Stuckoppurtunities");
+			
+			Thread.sleep(2000);
+			quit();
+		}
+		
+		@Test(priority=20)
+		public static void TC_19_OppSummaryReport() throws InterruptedException{
+			CreateTestScriptReport("TC_18_Opportunity_StuckLink");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement oppurtunities = driver.findElement(By.xpath("//a[contains(text(),'Opportunities')]"));
+			ClickButton(oppurtunities,"oppurtunities");
+			
+			
+			WebElement QSInterval = driver.findElement(By.xpath("//select[@id='quarter_q']"));
+			//SelectFromList(QSInterval,"Current FQ","QSInterval");
+			SelectFromList(QSInterval,"Next FQ","QSInterval");
+			//SelectFromList(QSInterval,"Current and Next FQ","QSInterval");
+		
+			
+			WebElement QSInclude = driver.findElement(By.xpath("//select[@id='open']"));
+			SelectFromList(QSInclude,"Open Opportunities","QSInclude");
+			//SelectFromList(QSInclude,"All Opportunities","QSInclude");
+			//SelectFromList(QSInclude,"Closed Opportunities","QSInclude");
+			
+			WebElement RunReport = driver.findElement(By.xpath("//table[@class='opportunitySummary']//input[@name='go']"));
+			ClickButton(RunReport,"RunReport");
+		}
+
+		@Test(priority=21)
+		public static void TC_20_LeadsTab() throws InterruptedException{
+			CreateTestScriptReport("TC_20_LeadsTab");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement LeadsTab = driver.findElement(By.xpath("//a[contains(text(),'Leads')]"));
+			ClickButton(LeadsTab,"LeadsTab");
+			
+			WebElement UserMenuDropdown = driver.findElement(By.xpath("//span[@id='userNavLabel']"));
+			ClickButton(UserMenuDropdown,"UserMenuDropdown");
+			
+			WebElement LogoutOption = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+			ClickButton(LogoutOption,"LogoutOption");
+			quit();
+		}
+		
+		
+		@Test(priority=22)
+		public static void TC_21_LeadsSelectView() throws InterruptedException{
+			CreateTestScriptReport("TC_21_LeadsSelectView");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement LeadsTab = driver.findElement(By.xpath("//a[contains(text(),'Leads')]"));
+			ClickButton(LeadsTab,"LeadsTab");
+			
+			WebElement LeadsViewDropdown = driver.findElement(By.xpath("//select[@id='fcf']"));
+			ClickButton(LeadsViewDropdown,"LeadsViewDropdown");
+		
+			WebElement UserMenuDropdown = driver.findElement(By.xpath("//span[@id='userNavLabel']"));
+			ClickButton(UserMenuDropdown,"UserMenuDropdown");
+			
+			WebElement LogoutOption = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+			ClickButton(LogoutOption,"LogoutOption");
+			quit();
+		}
+		
+		@Test(priority=23)
+		public static void TC_22_GoFunctionality() throws InterruptedException{
+			CreateTestScriptReport("TC_22_GoFunctionality");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement LeadsTab = driver.findElement(By.xpath("//a[contains(text(),'Leads')]"));
+			ClickButton(LeadsTab,"LeadsTab");
+
+			
+			WebElement LeadsView = driver.findElement(By.xpath("//select[@id='fcf']"));
+			SelectFromList(LeadsView,"Today's Leads","LeadsView");
+			
+			WebElement UserMenuDropdown = driver.findElement(By.xpath("//span[@id='userNavLabel']"));
+			ClickButton(UserMenuDropdown,"UserMenuDropdown");
+			
+			WebElement LogoutOption = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+			ClickButton(LogoutOption,"LogoutOption");
+			
+			Thread.sleep(7000);
+			
+			WebElement userName1 = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName1, "jyothi.t113-uv7d@force.com","UserName1" );
+		
+			WebElement passWord1 =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord1, "Salesforce123*","passWord1" );
+			
+			WebElement loginButton1 = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton1,"loginButton1");
+			
+			Thread.sleep(2000);
+			
+			WebElement LeadsTab1 = driver.findElement(By.xpath("//a[contains(text(),'Leads')]"));
+			ClickButton(LeadsTab1,"LeadsTab1");
+		
+			WebElement GoButton = driver.findElement(By.xpath("//span[@class='fBody']//input[@name='go']"));
+			ClickButton(GoButton,"GoButton");
+			Thread.sleep(4000);
+			
+			WebElement UserMenuDropdown1 = driver.findElement(By.xpath("//span[@id='userNavLabel']"));
+			ClickButton(UserMenuDropdown1,"UserMenuDropdown1");
+		
+			WebElement LogoutOption1 = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+			ClickButton(LogoutOption1,"LogoutOption1");
+			
+			quit();
+		
+		}
+
+		@Test(priority=24)
+		public static void TC_23_ListItemTodaysLead() throws InterruptedException{
+			CreateTestScriptReport("TC_23_ListItemTodaysLead");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement LeadsTab = driver.findElement(By.xpath("//a[contains(text(),'Leads')]"));
+			ClickButton(LeadsTab,"LeadsTab");
+
+			WebElement LeadsView = driver.findElement(By.xpath("//select[@id='fcf']"));
+			SelectFromList(LeadsView,"Today's Leads","LeadsView");
+			
+			WebElement UserMenuDropdown = driver.findElement(By.xpath("//span[@id='userNavLabel']"));
+			ClickButton(UserMenuDropdown,"UserMenuDropdown");
+			
+			WebElement LogoutOption = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+			ClickButton(LogoutOption,"LogoutOption");
+			Thread.sleep(4000);
+			quit();
+		}
+		
+		@Test(priority=25)
+		public static void TC_24_NewButtonLeadsPage() throws InterruptedException{
+			CreateTestScriptReport("TC_24_NewButtonLeadsPage");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			WebElement LeadsTab = driver.findElement(By.xpath("//a[contains(text(),'Leads')]"));
+			ClickButton(LeadsTab,"LeadsTab");
+			
+			WebElement NewButton = driver.findElement(By.xpath("//input[@name='new']"));
+			ClickButton(NewButton,"NewButton");
+			
+			WebElement LastName = driver.findElement(By.xpath("//input[@id='name_lastlea2']"));
+			enterText(LastName, "ABCD","LastName" );
+			
+			WebElement CompanyName = driver.findElement(By.xpath("//input[@id='lea3']"));
+			enterText(CompanyName, "ABCD","CompanyName" );
+			
+			WebElement SaveButton = driver.findElement(By.xpath("//td[@id='bottomButtonRow']//input[@name='save']"));
+			ClickButton(SaveButton,"SaveButton");
+		
+			WebElement UserMenuDropdown = driver.findElement(By.xpath("//span[@id='userNavLabel']"));
+			Thread.sleep(3000);
+			ClickButton(UserMenuDropdown,"UserMenuDropdown");
+			
+			WebElement LogoutOption = driver.findElement(By.xpath("//a[contains(text(),'Logout')]"));
+			Thread.sleep(3000);
+			ClickButton(LogoutOption,"LogoutOption");
+			Thread.sleep(5000);
+			quit();
+		}
+
+		@Test(priority=26)
+		public static void TC_25_CreateNewContact() throws InterruptedException{
+			CreateTestScriptReport("TC_25_CreateNewContact");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			Thread.sleep(2000);
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+			
+			WebElement NewButton = driver.findElement(By.xpath("//input[@name='new']"));
+			ClickButton(NewButton,"NewButton");
+			
+			WebElement LastName = driver.findElement(By.xpath("//input[@id='name_lastcon2']"));
+			enterText(LastName, "abc","LastName" );
+			
+			WebElement AccountName = driver.findElement(By.xpath("//input[@id='con4']"));
+			enterText(AccountName, "Jyo","AccountName" );
+			
+			WebElement saveButton = driver.findElement(By.xpath("//td[@id='bottomButtonRow']//input[@name='save']"));
+			ClickButton(saveButton,"saveButton");
+			
+			Thread.sleep(3000);
+		}
+
+
+		@Test(priority=27)
+		public static void TC_26_ContactNewView() throws InterruptedException{
+			CreateTestScriptReport("TC_26_ContactNewView");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			Thread.sleep(2000);
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+
+			WebElement CreateNewViewLink = driver.findElement(By.xpath("//a[contains(text(),'Create New View')]"));
+			ClickButton(CreateNewViewLink,"CreateNewViewLink");
+			
+			WebElement ViewName = driver.findElement(By.xpath("//input[@id='fname']"));
+			enterText(ViewName, "joe","ViewName" );
+			
+			WebElement UniqueViewName = driver.findElement(By.xpath("//input[@id='devname']"));
+			enterText(UniqueViewName, "12","UniqueViewName" );
+			
+			WebElement saveButton = driver.findElement(By.xpath("//div[@class='pbHeader']//input[@name='save']"));
+			ClickButton(saveButton,"saveButton");
+			
+			Thread.sleep(2000);
+
+		}
+
+		@Test(priority=28)
+		public static void TC_27_RecentlyCreated() throws InterruptedException{
+			CreateTestScriptReport("TC_27_RecentlyCreated");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			Thread.sleep(2000);
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+			
+			WebElement RecentlyCreated = driver.findElement(By.xpath("//select[@id='hotlist_mode']"));
+			SelectFromList(RecentlyCreated,"Recently Created","RecentlyCreated");
+			Thread.sleep(4000);
+		}
+		
+
+		@Test(priority=29)
+		public static void TC_28_MyContacts() throws InterruptedException{
+			CreateTestScriptReport("TC_28_MyContacts");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			Thread.sleep(2000);
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+			
+			WebElement view = driver.findElement(By.xpath("//select[@id='fcf']"));
+			SelectFromList(view,"My Contacts","view");
+			Thread.sleep(4000);
+		}
+		
+		@Test(priority=30)
+		public static void TC_29_ViewContact() throws InterruptedException{
+			CreateTestScriptReport("TC_29_ViewContact");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+			Thread.sleep(2000);
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+			
+			WebElement ContactName = driver.findElement(By.xpath("//a[contains(text(),'Stamos (Sample), Jennifer')]"));
+			ClickButton(ContactName,"ContactName");
+		}
+		
+		@Test(priority=31)
+		public static void TC_30_CheckErrorMessage() throws InterruptedException{
+			CreateTestScriptReport("TC_30_CheckErrorMessage");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+
+			Thread.sleep(2000);
+			WebElement Homepage = driver.findElement(By.xpath("//a[contains(text(),'Home')]"));
+			ClickButton(Homepage,"Homepage");
+			
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+			
+			WebElement CreateNewViewHyperLink = driver.findElement(By.xpath("//a[contains(text(),'Create New View')]"));
+			ClickLink(CreateNewViewHyperLink,"CreateNewViewHyperLink");
+			
+			WebElement ViewName = driver.findElement(By.xpath("//input[@id='fname']"));
+			ClearText(ViewName,"ViewName");
+			
+			WebElement UniqueViewName = driver.findElement(By.xpath("//input[@id='devname']"));
+			enterText(UniqueViewName, "EFGHI","UniqueViewName" );
+			
+			WebElement saveButon = driver.findElement(By.xpath("//div[@class='pbHeader']//input[@name='save']"));
+			ClickButton(saveButon,"saveButon");
+		
+		}
+		@Test(priority=32)
+		public static void TC_31_CancelButton() throws InterruptedException{
+			CreateTestScriptReport("TC_31_CancelButton");
+			launchURL();
+			
+			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
+			
+			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+			enterText(passWord, "Salesforce123*","PassWord" );
+	
+			WebElement loginButton = driver.findElement(By.xpath("//input[@id='Login']"));
+			ClickButton(loginButton,"Login");
+			
+
+			Thread.sleep(2000);
+			WebElement Homepage = driver.findElement(By.xpath("//a[contains(text(),'Home')]"));
+			ClickButton(Homepage,"Homepage");
+			
+			WebElement ContactTab = driver.findElement(By.xpath("//a[contains(text(),'Contacts')]"));
+			ClickButton(ContactTab,"ContactTab");
+			
+			WebElement CreateNewViewHyperLink = driver.findElement(By.xpath("//a[contains(text(),'Create New View')]"));
+			ClickLink(CreateNewViewHyperLink,"CreateNewViewHyperLink");
+			
+			WebElement ViewName = driver.findElement(By.xpath("//input[@id='fname']"));
+			enterText(ViewName, "ABCDE","ViewName" );
+			
+			WebElement UniqueViewName = driver.findElement(By.xpath("//input[@id='devname']"));
+			enterText(UniqueViewName, "EFGHIJ","UniqueViewName" );
+			
+			WebElement CancelButton = driver.findElement(By.xpath("//div[@class='pbHeader']//input[@name='cancel']"));
+			ClickButton(CancelButton,"CancelButton");
+		}
+		
 		
 		
 }
