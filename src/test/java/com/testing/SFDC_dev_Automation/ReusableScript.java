@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -51,7 +53,11 @@ public class ReusableScript {
 		System.out.println("Salesforce application opened");
 	}
 	
-	
+	public static void quit(){
+		
+		driver.quit();
+		System.out.println("Salesdorce application is closed");
+	}
 	/*Name of the Method:enterText
 	 * Brief Description : Enter text into text box
 	 * Arguments :obj-- web object, text-- text to be entered, objname --Name of the object
@@ -117,7 +123,7 @@ public class ReusableScript {
 		 */
 		public static void deSelectCheckBox(WebElement checkbox,String objName){
 			if(checkbox.isEnabled()){
-				checkbox.click();
+				//checkbox.click();
 				checkbox.click();
 				System.out.println("Pass: "+ objName+ "is clicked");
 				logger.log(LogStatus.PASS, objName + "is clicked");
@@ -174,6 +180,109 @@ public class ReusableScript {
 				logger.log(LogStatus.FAIL, objName + "is not enabled");
 			}
 		}
+		
+		public static void ClickLink(WebElement link,String objName){
+			if(link.isEnabled()){
+				
+				link.click();
+				System.out.println("Pass: "+ objName+ "is clicked");
+				logger.log(LogStatus.PASS, objName + "is clicked");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		public static void SelectRadioButton(WebElement RadioButton,String objName){
+			if(RadioButton.isEnabled()){
+				
+				RadioButton.click();
+				System.out.println("Pass: "+ objName+ "is clicked");
+				logger.log(LogStatus.PASS, objName + "is clicked");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		
+		public static void DeSelectRadioButton(WebElement RadioButton,String objName){
+			if(RadioButton.isEnabled()){
+				
+				RadioButton.click();
+				System.out.println("Pass: "+ objName+ "is clicked");
+				logger.log(LogStatus.PASS, objName + "is clicked");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		
+		public static void MouseOver(WebElement obj,String objName){
+			if(obj.isEnabled()){
+				
+				Actions action= new Actions(driver);
+				action.moveToElement(obj).build().perform();
+				System.out.println("Pass: "+ objName+ "is selected using mouseOver");
+				logger.log(LogStatus.PASS, objName + "is selected using mouseOver");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		public static void SwitchFrame(WebElement obj,String objName){
+			if(obj.isEnabled()){
+				
+				driver.switchTo().frame(obj);
+				
+				System.out.println("Pass: "+ objName+ " frame is switched");
+				logger.log(LogStatus.PASS, objName + "frame is switched");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		public static void HighlightElement(WebElement obj,String objName){
+			if(obj.isDisplayed()){
+				
+				System.out.println("Pass: "+ objName+ " is Displayed");
+				logger.log(LogStatus.PASS, objName + "is Displayed");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		
+		public static void SelectFromList(WebElement obj,String VisibleText,String objName){
+			if(obj.isDisplayed()){
+				Select Element = new Select(obj);
+				Element.selectByVisibleText(VisibleText);
+				System.out.println("Pass: "+ objName+ " is selected from list");
+				logger.log(LogStatus.PASS, objName + "is selected from list");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		public static void ClearText(WebElement obj,String objName){
+			if(obj.isDisplayed()){
+			obj.clear();
+				System.out.println("Pass: "+ objName+ " is cleared");
+				logger.log(LogStatus.PASS, objName + "is cleared");
+			}else{
+				System.out.println("fail "+objName+ "is not enabled");
+				logger.log(LogStatus.FAIL, objName + "is not enabled,please check the application");
+			}
+		}
+		
+		
+		
+		
 	}
 
 
