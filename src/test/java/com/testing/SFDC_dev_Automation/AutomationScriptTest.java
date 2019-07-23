@@ -28,7 +28,7 @@ public class AutomationScriptTest extends ReusableScript {
 			CreateTestScriptReport("LoginErrorMessage");
 			launchURL();
 			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
-			enterText(userName, "jyothipraveena194-xzax@force.com","UserName" );
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
 			
 			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
 			passWord.clear();
@@ -44,7 +44,7 @@ public class AutomationScriptTest extends ReusableScript {
 		
 		launchURL();
 		WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
-		enterText(userName, "jyothipraveena194-xzax@force.com","UserName" );
+		enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
 		
 		WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
 		enterText(passWord, "Salesforce123*","PassWord" );
@@ -59,7 +59,7 @@ public class AutomationScriptTest extends ReusableScript {
 			launchURL();
 			
 			WebElement userName = driver.findElement(By.xpath("//input[@id='username']"));
-			enterText(userName, "jyothipraveena194-xzax@force.com","UserName" );
+			enterText(userName, "jyothi.t113-uv7d@force.com","UserName" );
 			
 			WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
 			enterText(passWord, "Salesforce123*","PassWord" );
@@ -98,7 +98,7 @@ public class AutomationScriptTest extends ReusableScript {
 				
 		
 			WebElement UserNameinForgotPassword = driver.findElement(By.id("un"));
-			enterText(UserNameinForgotPassword,"jyothipraveena194-xzax@force.com","email" );
+			enterText(UserNameinForgotPassword,"jyothi.t113-uv7d@force.com","email" );
 				
 				WebElement ContinueButton = driver.findElement(By.xpath("//input[@id='continue']"));
 				ClickButton(ContinueButton,"Continue");
